@@ -98,10 +98,6 @@
 {
     pointer-events: none;
 }
-.slick-initialized .slick-slide
-{
-    display: block;
-}
 .slick-loading .slick-slide
 {
     visibility: hidden;
