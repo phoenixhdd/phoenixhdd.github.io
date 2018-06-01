@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900');
+
+svg {
+  vertical-align: middle;
+}
+
+body {
+  background: #1b1b1b;
+  color: #fff;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 16px;
+  margin: 0;
+}
+
+.daft-player {
+  height: 100vh;
+  max-width: 576px;
+  margin: 0 auto;
+  position: relative;
+
+  .daft-player__background {
+    background-size: cover;
+    background-position: center 0;
+    background-repeat: no-repeat;
+    filter: grayscale(100%);
+    min-height: 340px;
+    position: absolute;
+    width: 100%;
+
+    &::after {
+      background-color: rgba(27, 27, 27, 0.8);
+      content: "";
+      background-image: linear-gradient(to top, #1b1b1b 0%, rgba(27, 27, 27, 0.95) 33%, rgba(27, 27, 27, 0) 100%);
+      position: absolute;
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .daft-player__heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2.5em 3.4375em;
+    position: relative;
+
+    .daft-player__album--title {
+      text-align: center;
+
+      .daft-player__album--heading {
+        color: #9a9b9b;
+        font-size: 1.125rem;
+        text-transform: uppercase;
+      }
+
+      .daft-player__album--name {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
+.daft-player__content {
+  .slick-track {
+    display: flex;
+    align-items: center;
+  }
+
+  .slick-slide {
+    padding: 0 2em;
+
+    .song__details {
+      display: none;
+    }
+  }
+
+  .slick-current {
+    .song__details {
+      display: block;
+    }
+  }
+
+  .daft-player__song--thumbnail {
+    img {
+      max-width: 100%;
+    }
+  }
+
+  .daft-player__song--details {
+    text-align: center;
+    margin-top: 2.5em;
+
+    .daft-player__song--name {
+      color: #0fd65a;
+      font-size: 2.25rem;
+    }
+
+    .daft-player__song--author {
+      color: #9a9b9b;
+      font-size: 1.125rem;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.daft-player__waveform {
+  height: 3.5em;
+  display: flex;
+  align-items: flex-end;
+
+  .daft-player__waveform--bar {
+    background: #0fd65a;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    width: 4px;
+    transition: 0.3s ease-in-out;
+  }
+}
+
+.daft-player__controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 1.25em 3.125em;
+
+  .control__play-song {
+    .play-song__icon {
+      background-image: url('../images/Play_inactive.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 200px;
+      width: 200px;
+      transition: 0.3s ease-in-out;
+
+      &.paused {
+        background-image: url('../images/Play_active.png');
+      }
+    }
+  }
+}
+
+.daft-player__music--progress-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 3.125em;
+  margin-bottom: 3.125em;
+
+  .daft-player__progress-time,
+  .daft-player__song-time {
+    color: #9a9b9b;
+    font-size: 1.125rem;
+  }
+
+  .daft-player__progress-bar {
+    background: #000;
+    height: 1px;
+    max-width: 378px;
+    width: 100%;
+
+    position: relative;
+
+    &::before {
+      content: "";
+      background: #2a2a2a;
+      border-radius: 0px 2.5px 2.5px 0px;
+      position: absolute;
+      top: -2px;
+      left: 0;
+      width: 65%;
+      height: 5px;
+    }
+
+    &::after {
+      content: "";
+      background: #000;
+      border-radius: 50%;
+      position: absolute;
+      right: 0;
+      top: -2px;
+      height: 5px;
+      width: 5px;
+    }
+  }
+}
+
+.daft-player__footer {
+  background: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5625em 4em 1.5625em 2.8125em;
+
+  .daft-player__next-song {
+    display: flex;
+    align-items: center;
+
+    .daft-player__next--heading {
+      color: #9a9b9b;
+      font-size: 1.125rem;
+      text-transform: uppercase;
+    }
+
+    .daft-player__next-song--name {
+      color: #1b1b1b;
+      font-size: 1.5rem;
+
+      .song__dots {
+        color: #cacaca;
+        margin-left: 0.5em;
+        letter-spacing: 0.4em;
+      }
+    }
+  }
+
+  .daft-player__next-song--time {
+    align-self: flex-end;
+    color: #9a9b9b;
+    font-size: 1.5rem;
+  }
+}

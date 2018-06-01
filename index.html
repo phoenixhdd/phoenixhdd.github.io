@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DaftPlayer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="theme-color" content="#0a5ec7">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#0a5ec7">
+
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/slick.css">
+</head>
+<body>
+<div class="daft-player">
+  <div class="daft-player__background" style="background-image: url('images/bg_image.jpg')"></div>
+  <div class="daft-player__heading">
+    <div class="daft-player__heading--back">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16.2 29.3" width="16px" height="29px">
+        <path fill="#0fd65a"
+              d="M15.7 26.6l-12-12 12-12c.6-.6.6-1.6 0-2.2s-1.6-.6-2.2 0L.5 13.5c-.6.6-.6 1.6 0 2.2l13.1 13.1c.6.6 1.6.6 2.2 0 .5-.6.5-1.6-.1-2.2z"/>
+      </svg>
+    </div>
+    <div class="daft-player__album--title">
+      <div class="daft-player__album--heading">Album</div>
+      <div class="daft-player__album--name">Unreleased</div>
+    </div>
+
+    <div class="daft-player__heading--burger">
+      <svg xmlns="http://www.w3.org/2000/svg" width="4" height="29" viewBox="0 0 4 29">
+        <path fill="#0fd65a" fill-rule="evenodd"
+              d="M2 25.031a1.985 1.985 0 1 1-2 1.985 2 2 0 0 1 2-1.985zM2 12.5a2 2 0 1 1-2 2 2 2 0 0 1 2-2zM2 0a1.985 1.985 0 1 1-2 1.984A1.995 1.995 0 0 1 2 0z"/>
+      </svg>
+    </div>
+  </div>
+
+  <div class="daft-player__content">
+    <div class="daft-player__song--thumbnail">
+      <div>
+        <img src="images/cover-1.png" alt="unreleased_cover">
+      </div>
+      <div>
+        <img src="images/unreleased_cover.png" alt="unreleased_cover">
+      </div>
+      <div>
+        <img src="images/cover.png" alt="cover">
+      </div>
+      <div>your content #5</div>
+      <div>
+        <img src="images/cover.png" alt="cover">
+      </div>
+    </div>
+
+    <div class="daft-player__song--details">
+      <div class="daft-player__song--name">Self Conscious</div>
+      <div class="daft-player__song--author">Kanye West</div>
+    </div>
+
+    <div class="daft-player__controls">
+      <div class="control__shuffle-play">
+        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26">
+          <path fill="#b3b3b3" fill-rule="evenodd"
+                d="M1.06 15.553A1.069 1.069 0 0 1 0 14.484V11.5a8.53 8.53 0 0 1 8.52-8.524h12.35V.317a.326.326 0 0 1 .32-.323.33.33 0 0 1 .19.1l4.5 3.758a.321.321 0 0 1-.02.445L21.41 8a.345.345 0 0 1-.23.1.324.324 0 0 1-.31-.323V5.118H8.52a6.4 6.4 0 0 0-6.39 6.387v2.982a1.071 1.071 0 0 1-1.07 1.066zM4.81 25.99a.311.311 0 0 1-.2-.1L.1 22.133a.361.361 0 0 1-.07-.218.326.326 0 0 1 .1-.227l4.45-3.707a.307.307 0 0 1 .53.227v2.66h12.36a6.39 6.39 0 0 0 6.38-6.388V11.5a1.07 1.07 0 0 1 2.14 0v2.982a8.53 8.53 0 0 1-8.52 8.524H5.11v2.66a.316.316 0 0 1-.3.324z"/>
+        </svg>
+      </div>
+      <div class="control__previous-song">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="26" viewBox="0 0 30 26">
+          <path fill="#b3b3b3" fill-rule="evenodd"
+                d="M25.129 0A4.895 4.895 0 0 1 30 4.9v16.2a4.851 4.851 0 0 1-7.441 4.15l-7.528-4.718a1.168 1.168 0 0 1 .615-2.157 1.148 1.148 0 0 1 .613.177l7.529 4.718a2.544 2.544 0 0 0 3.89-2.17V4.9a2.535 2.535 0 0 0-3.89-2.17l-12.933 8.1a2.565 2.565 0 0 0 0 4.339 1.171 1.171 0 0 1 .371 1.608 1.158 1.158 0 0 1-1.6.373 4.9 4.9 0 0 1 0-8.3L22.558.745A4.848 4.848 0 0 1 25.129 0zm-23.8 0a1.328 1.328 0 0 1 1.328 1.328v23.344a1.328 1.328 0 0 1-2.656 0V1.328A1.329 1.329 0 0 1 1.328 0z"/>
+        </svg>
+      </div>
+      <div class="control__play-song" onclick="activePlayMusic()">
+        <div class="play-song__icon"></div>
+        <!--<img src="images/Play_active.png" alt="play_inactive" id="paused">-->
+      </div>
+      <div class="control__next-song">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="26" viewBox="0 0 30 26">
+          <path fill="#b3b3b3" fill-rule="evenodd"
+                d="M4.871 0A4.895 4.895 0 0 0 0 4.9v16.2a4.851 4.851 0 0 0 7.441 4.15l7.528-4.718a1.168 1.168 0 0 0-.615-2.157 1.148 1.148 0 0 0-.613.177L6.212 23.27a2.544 2.544 0 0 1-3.89-2.17V4.9a2.535 2.535 0 0 1 3.89-2.17l12.933 8.1a2.565 2.565 0 0 1 0 4.339 1.171 1.171 0 0 0-.371 1.608 1.158 1.158 0 0 0 1.6.373 4.9 4.9 0 0 0 0-8.3L7.442.745A4.848 4.848 0 0 0 4.871 0zm23.8 0A1.329 1.329 0 0 1 30 1.328v23.344a1.328 1.328 0 0 1-2.656 0V1.328A1.328 1.328 0 0 1 28.672 0z"/>
+        </svg>
+      </div>
+      <div class="control__repeat-song">
+        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26">
+          <path fill="#b3b3b3" fill-rule="evenodd"
+                d="M21.225 25.988a.322.322 0 0 1-.318-.322v-2.639l-.4-.02a10.1 10.1 0 0 1-9.032-6.853l-1.89-5.653a7.883 7.883 0 0 0-7.49-5.388H1.06a1.069 1.069 0 1 1 0-2.137h1.03a10.021 10.021 0 0 1 9.5 6.875l1.891 5.653a7.86 7.86 0 0 0 6.978 5.365l.451.029V18.21a.323.323 0 0 1 .323-.323.332.332 0 0 1 .241.09l4.248 3.534.178.2a.336.336 0 0 1 .105.244.33.33 0 0 1-.1.227l-4.459 3.707a.341.341 0 0 1-.221.099zm0-17.893a.322.322 0 0 1-.32-.323V5.083l-.453.031a7.944 7.944 0 0 0-4.7 1.97 1.07 1.07 0 0 1-.706.266 1.092 1.092 0 0 1-.849-.368 1.066 1.066 0 0 1 .106-1.507 10.2 10.2 0 0 1 6.206-2.5l.4-.02V.316a.285.285 0 0 1 .5-.224l4.519 3.762a.324.324 0 0 1-.023.444l-4.459 3.708a.334.334 0 0 1-.219.094zM1.06 23.006a1.068 1.068 0 1 1 0-2.136h1.03a7.937 7.937 0 0 0 4.875-1.68l.064-.046a1.072 1.072 0 0 1 1.457.161 1.067 1.067 0 0 1-.119 1.506 10.106 10.106 0 0 1-6.277 2.195H1.06z"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="daft-player__music--progress-bar">
+      <div class="daft-player__progress-time">1:47</div>
+      <div class="daft-player__progress-bar"></div>
+      <div class="daft-player__song-time">4:21</div>
+    </div>
+
+    <div class="daft-player__waveform">
+      <span class="daft-player__waveform--bar" id="waveformBar"></span>
+    </div>
+  </div>
+
+  <div class="daft-player__footer">
+    <div class="daft-player__songs--burger">
+      <svg xmlns="http://www.w3.org/2000/svg" width="36" height="26" viewBox="0 0 36 26">
+        <path fill="#0fd65a" fill-rule="evenodd"
+              d="M11.119 25.96a1.665 1.665 0 1 1 0-3.33h23.189a1.665 1.665 0 1 1 0 3.33H11.119zm0-11.3a1.665 1.665 0 1 1 0-3.33h23.189a1.665 1.665 0 1 1 0 3.33H11.119zm0-11.3a1.665 1.665 0 1 1 0-3.33h23.189a1.665 1.665 0 1 1 0 3.33H11.119zm-9.376.07A1.71 1.71 0 1 1 3.49 1.72a1.732 1.732 0 0 1-1.747 1.71zm0 11.27a1.71 1.71 0 1 1 1.746-1.71 1.725 1.725 0 0 1-1.746 1.71zm0 11.3a1.71 1.71 0 1 1 1.747-1.71A1.726 1.726 0 0 1 1.743 26z"/>
+      </svg>
+    </div>
+    <div class="daft-player__next-song">
+      <div class="daft-player__next-song--info">
+        <div class="daft-player__next--heading">Next</div>
+        <div class="daft-player__next-song--name">
+          Livin' In A Movie
+          <span class="song__dots">...........</span>
+        </div>
+      </div>
+      <div class="daft-player__next-song--time">3:27</div>
+    </div>
+  </div>
+</div>
+
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/slick.min.js"></script>
+<script type="text/javascript" src="js/slider.js"></script>
+<script type="text/javascript" src="js/waveform.js"></script>
+<script type="text/javascript" src="js/scripts.js"></script>
+</body>
+</html>
