@@ -75,8 +75,14 @@
       <div>
         <img src="images/cover-1.png" alt="unreleased_cover">
       </div>
-      <div>
+      <div class="daft-player__song">
         <img src="images/unreleased_cover.png" alt="unreleased_cover">
+        <div class="daft-code__logo">
+          <svg xmlns="http://www.w3.org/2000/svg" width="29" height="34" viewBox="0 0 29 34">
+            <path fill="#fff" fill-rule="evenodd"
+                  d="M13.291.874l-1.577 4.2 3.1-.578zm13.262 29.48L18.123 0l-2.292 5.207L0 8.159v15.059l3.392-3.276 1.293 1.92 2.707-2.614.972 1.442 2.193-2.118L9.641 34h17.923L29 28.47zM1.485 9.4l-.641 1.743V8.86l2.555-.477zm12.952.353a1.611 1.611 0 0 1-1.577-1.379l3.146-.587a1.728 1.728 0 0 1 .032.324 1.622 1.622 0 0 1-1.601 1.638z"/>
+          </svg>
+        </div>
       </div>
       <div>
         <img src="images/cover.png" alt="cover">
@@ -105,7 +111,7 @@
                 d="M25.129 0A4.895 4.895 0 0 1 30 4.9v16.2a4.851 4.851 0 0 1-7.441 4.15l-7.528-4.718a1.168 1.168 0 0 1 .615-2.157 1.148 1.148 0 0 1 .613.177l7.529 4.718a2.544 2.544 0 0 0 3.89-2.17V4.9a2.535 2.535 0 0 0-3.89-2.17l-12.933 8.1a2.565 2.565 0 0 0 0 4.339 1.171 1.171 0 0 1 .371 1.608 1.158 1.158 0 0 1-1.6.373 4.9 4.9 0 0 1 0-8.3L22.558.745A4.848 4.848 0 0 1 25.129 0zm-23.8 0a1.328 1.328 0 0 1 1.328 1.328v23.344a1.328 1.328 0 0 1-2.656 0V1.328A1.329 1.329 0 0 1 1.328 0z"/>
         </svg>
       </div>
-      <div class="control__play-song" onclick="activePlayMusic()">
+      <div class="control__play-song" onclick="playSong()">
         <div class="play-song__icon"></div>
       </div>
       <div class="control__next-song">
@@ -130,9 +136,7 @@
       <div class="daft-player__song-time">4:21</div>
     </div>
 
-    <div class="daft-player__waveform">
-      <span class="daft-player__waveform--bar" id="waveformBar"></span>
-    </div>
+    <div class="daft-player__waveform"></div>
   </div>
 
   <div class="daft-player__footer">
@@ -167,7 +171,7 @@
         <div class="playlist__now-playing--author">Kanye West</div>
       </div>
 
-      <div class="control__play-song" onclick="activePlayMusic()">
+      <div class="control__play-song" onclick="playSong()">
         <div class="play-song__icon playlist__play-icon"></div>
       </div>
     </div>
@@ -257,7 +261,6 @@
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/slick.min.js"></script>
 <script type="text/javascript" src="js/slider.js"></script>
-<script type="text/javascript" src="js/waveform.js"></script>
 <script type="text/javascript" src="js/scripts.js"></script>
 </body>
 </html>
