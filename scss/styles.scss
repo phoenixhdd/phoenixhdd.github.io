@@ -233,15 +233,14 @@ ul, li {
 
     position: relative;
 
-    &::before {
-      content: "";
+    .daft-player__progress {
       background: #2a2a2a;
       border-radius: 0px 2.5px 2.5px 0px;
       position: absolute;
       top: -2px;
       left: 0;
-      width: 65%;
       height: 5px;
+      z-index: 1;
     }
 
     &::after {
