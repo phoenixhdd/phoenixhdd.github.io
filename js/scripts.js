@@ -4,17 +4,6 @@ const playlistContent = document.querySelector('.daft-player__playlist');
 const playerHeading = document.querySelector('.daft-player__heading');
 const playlistPlayer = document.querySelector('.playlist__play-icon');
 
-function activePlayMusic() {
-  if (!playSongButton.classList.contains('paused') && !playlistPlayer.classList.contains('paused')) {
-    playSongButton.classList.add('paused');
-    playlistPlayer.classList.add('paused');
-    playSong();
-  } else {
-    playSongButton.classList.remove('paused');
-    playlistPlayer.classList.remove('paused');
-  }
-}
-
 function openMenu() {
   if (!menuContent.classList.contains('open')) {
     menuContent.classList.add('open');
@@ -33,47 +22,63 @@ function openPlaylist() {
   }
 }
 
-// Here I create function which generate random height for a waveform bar
-const waveformBar = document.getElementById('waveformBar');
+// Here I create function which starts generate waveform/progressbar time with custom heights
 const waveFormContainer = document.querySelector('.daft-player__waveform');
-const applicationWidth = document.body.clientWidth / 4;
+const applicationWidth = waveFormContainer.clientWidth / 4;
 
+let startProgressBarWidth = 0;
 let startWaveFormWidth = 0;
-let i = 0;
 
 const generateWaveform = () => {
-  const randomHeight = Math.floor(Math.random() * 20) + 15;
   const newBar = document.createElement('span');
+  const randomHeight = Math.floor(Math.random() * 20) + 15;
   newBar.className = 'daft-player__waveform--bar';
   newBar.style.height = randomHeight + 'px';
   waveFormContainer.appendChild(newBar);
 }
 
-for (let i = 0; i <= applicationWidth; i++) {
-  (function() {
-    setTimeout(function() { }, i * 1000);
-  })(i);
-  const randomHeight = Math.floor(Math.random() * 20) + 15;
-  waveformBar.style.height = randomHeight + 'px';
-  generateWaveform();
-}
-
-
 function playSong() {
-  const intervalTime = setInterval(frame, 10);
-  const randomHeight = Math.floor(Math.random() * 20) + 15;
   const songTimeBar = document.querySelector('.daft-player__progress');
-  const newBar = document.createElement('span');
-  newBar.className = 'daft-player__waveform--bar';
-  newBar.style.height = randomHeight + 'px';
+  const intervalTime = setInterval(frame, 100);
+  const waveFormTime = setInterval(waveFormBars, 100);
+
+  if (startProgressBarWidth === 100) {
+    startProgressBarWidth = 0;
+  }
+
+  if (startWaveFormWidth === applicationWidth) {
+    while (waveFormContainer.firstChild) {
+      waveFormContainer.removeChild(waveFormContainer.firstChild);
+    }
+    startWaveFormWidth = 0;
+  }
+
+  if (!playSongButton.classList.contains('paused') && !playlistPlayer.classList.contains('paused')) {
+    playSongButton.classList.add('paused');
+    playlistPlayer.classList.add('paused');
+  } else {
+    playSongButton.classList.remove('paused');
+    playlistPlayer.classList.remove('paused');
+  }
 
   function frame() {
-    if (startWaveFormWidth >= 100) {
+    if (startProgressBarWidth >= 100) {
       clearInterval(intervalTime);
+      playSongButton.classList.remove('paused');
+      playlistPlayer.classList.remove('paused');
+    } else {
+      startProgressBarWidth++;
+      const barWidth = startProgressBarWidth + '%';
+      songTimeBar.style.width = barWidth;
+    }
+  }
+
+  function waveFormBars() {
+    if (startWaveFormWidth >= applicationWidth) {
+      clearInterval(waveFormTime);
     } else {
       startWaveFormWidth++;
-      const barWidth = startWaveFormWidth + '%';
-      songTimeBar.style.width = barWidth;
+      generateWaveform();
     }
   }
 }

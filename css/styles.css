@@ -83,6 +83,22 @@ ul, li {
       display: none; }
   .daft-player__content .slick-current .song__details {
     display: block; }
+  .daft-player__content .daft-player__song {
+    position: relative; }
+    .daft-player__content .daft-player__song .daft-code__logo {
+      position: absolute;
+      height: 4.5em;
+      width: 4.5em;
+      background: #1b1b1b;
+      border: 5px solid #0fd65a;
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 9;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
   .daft-player__content .daft-player__song--thumbnail img {
     max-width: 100%;
     max-height: 12em; }
@@ -109,7 +125,8 @@ ul, li {
 
 .daft-player__waveform {
   display: flex;
-  align-items: flex-end; }
+  align-items: flex-end;
+  height: 2.125em; }
   .daft-player__waveform .daft-player__waveform--bar {
     background: #0fd65a;
     border-top-left-radius: 50%;
@@ -124,6 +141,9 @@ ul, li {
   padding: 0.5em 3.125em 1em; }
   .daft-player__controls svg {
     max-width: 20px; }
+    @media screen and (min-width: 576px) {
+      .daft-player__controls svg {
+        max-width: 100%; } }
 
 .control__play-song {
   height: 8em;
