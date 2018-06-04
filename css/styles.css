@@ -54,6 +54,13 @@ ul, li {
         height: 8.125em; } }
     .daft-player .daft-player__heading.hide {
       visibility: hidden; }
+    .daft-player .daft-player__heading .daft-player__heading--back,
+    .daft-player .daft-player__heading .daft-player__heading--burger {
+      width: 1.875em;
+      height: 1.875em;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
     .daft-player .daft-player__heading .daft-player__album--title {
       text-align: center; }
       .daft-player .daft-player__heading .daft-player__album--title .daft-player__album--heading {
@@ -129,8 +136,8 @@ ul, li {
   height: 2.125em; }
   .daft-player__waveform .daft-player__waveform--bar {
     background: #0fd65a;
-    border-top-left-radius: 50%;
-    border-top-right-radius: 50%;
+    border-top-left-radius: 25%;
+    border-top-right-radius: 25%;
     width: 4px;
     transition: 0.3s ease-in-out; }
 

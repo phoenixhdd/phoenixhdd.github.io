@@ -69,6 +69,16 @@ ul, li {
       visibility: hidden;
     }
 
+    .daft-player__heading--back,
+    .daft-player__heading--burger {
+      width: 1.875em;
+      height: 1.875em;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
     .daft-player__album--title {
       text-align: center;
 
@@ -182,8 +192,8 @@ ul, li {
 
   .daft-player__waveform--bar {
     background: #0fd65a;
-    border-top-left-radius: 50%;
-    border-top-right-radius: 50%;
+    border-top-left-radius: 25%;
+    border-top-right-radius: 25%;
     width: 4px;
     transition: 0.3s ease-in-out;
   }
